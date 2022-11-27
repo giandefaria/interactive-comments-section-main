@@ -1,7 +1,7 @@
 Tarefas projeto
 
 [X] Criar 3 caixas no html
-[ ] adicionar botão reply
+[X] adicionar botão reply
 [ ] adicionar a abertura de uma caixa de resposta
 [ ] adicionar o texto da resposta no html ao clicar send
 [ ] adicionar botão de editar e deletar
