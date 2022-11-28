@@ -17,3 +17,17 @@ html {
     height: 20vh;
     background: lightgray;
 }
+
+.user {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user--info {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+}

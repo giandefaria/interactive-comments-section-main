@@ -14,18 +14,56 @@
 <body>
 
     <main class="container">
+        <div class="col-md-12 box teste display" id="ammyRobson">
+            <div class="rating"></div>
+            <div class="user--data"> 
+
+                <div class="user">
+                    <div class="user--info">
+                        <img src="images/avatars/image-amyrobson.png" alt="amyrobson">
+                        <h1 class="id">amyrobson</h1>
+                        <h2 class="time">1 month ago</h2>
+                    </div>  
+
+                    <div>
+                        <button class="button">reply</button>
+                    </div>
+
+                </div>
+
+                <div class="message">
+                    <p class="text"></p>
+                </div>  
+
+            </div>
+
+        </div>
+
         <div class="col-md-12 box teste">
-            <button onclick= "criarComentário()">reply</button>
+            <button class="button" >reply</button>
+            <p class="text"></p>
 
         </div>
     
         <div class="col-md-9 offset-md-3 box">
             <button>reply</button>
+            <p class="reply--text"></p>
+    
+        </div>
+
+        <div class="col-md-9 offset-md-3 box">
+            <button>reply</button>
+            <p class="reply--text"></p>
     
         </div>
     
         <div class="col-md-12 box">
-            <button>reply</button>
+            <form onsubmit="return false">
+                <label for="coment">
+                    <input type="text" name="coment" id="coment" placeholder="Add a comment...">
+                </label>
+                <button onclick="saveComent()" type="submit">SEND</button>
+            </form>
 
         </div>
 
@@ -34,5 +72,6 @@
  
 
     <script src="js/script.js"></script>
+    <script src="js/inputJsonData.js"></script>
 </body>
 </html>

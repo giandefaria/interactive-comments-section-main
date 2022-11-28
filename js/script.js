@@ -1,8 +1,39 @@
-const button = document.getElementsByClassName("teste");
+const button = document.querySelectorAll(".button");
 const reply = document.create
 
-
+let array = [];
 //Crio uma div de reply, dentro dessa div, adiciono um botão de reply e o formulário
+
+for (let i = 0; i < button.length; i++) {
+  
+    array.push(i)
+    console.log(array[i]);
+
+    button[i].addEventListener('click', (e) => {
+        
+        let newDiv = document.createElement("div");
+        newDiv.className = "col-md-9 offset-md-3 box";
+        newDiv.id = "reply";
+        newDiv.innerHTML = `
+        
+        <form onsubmit="return false">
+            <label for="coment">
+                <input type="text" name="coment" id="coment" placeholder="Add a comment...">
+            </label>
+            <button onclick="saveComent()" type="submit">save</button>
+        </form>
+        `;
+
+        //puxei os parametros informados pelo evento e com ele descobri que consigo selecionar o box em que foi apertado o botão pela função path[1]
+        //adicionei o comando para adicionar a nova div após o path[1]
+        console.log(e);
+        let event = e;
+        console.log(event.path[1]);
+        event.path[1].after(newDiv);
+
+    });
+}
+
 function criarComentário () {
 
     let newDiv = document.createElement("div");
@@ -12,7 +43,7 @@ function criarComentário () {
     
     <form onsubmit="return false">
         <label for="coment">
-            <input type="text" name="coment" id="coment" placeholder="Add a comment..." required>
+            <input type="text" name="coment" id="coment" placeholder="Add a comment...">
         </label>
         <button onclick="saveComent()" type="submit">save</button>
     </form>
@@ -25,10 +56,14 @@ function criarComentário () {
 //função que salva o comentário no localstorage e cria um output com o comentário escrito 
 function saveComent () {
 
-    console.log("funcionando")
     let valueInput = document.getElementById("coment").value;
     localStorage.setItem("test", valueInput);
-    text();
+
+    if (valueInput == "") {
+        alert("Insert a message")
+    } else {
+         text();
+      }
 
 }
 
@@ -56,7 +91,7 @@ function edit () {
     
     <form onsubmit="return false">
         <label for="coment">
-            <input type="text" name="coment" id="coment" placeholder="Add a comment..." required>
+            <input type="text" name="coment" id="coment" placeholder="Add a comment...">
         </label>
         <button onclick="saveComent()" type="submit">save</button>
     </form>
@@ -70,3 +105,4 @@ function remove () {
     let element = document.getElementById("reply");
     element.remove();
 };
+
