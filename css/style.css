@@ -6,7 +6,6 @@ html {
 
 .container {
     display: grid;
-    justify-items: center;
     grid-template-columns: 1fr;
     gap: 50px;
     margin: 100px 0;
