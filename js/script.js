@@ -17,20 +17,21 @@ for (let i = 0; i < button.length; i++) {
         newDiv.innerHTML = `
         
         <form onsubmit="return false">
+            <img class="user--avatar" src="" alt="user avatar">
             <label for="coment">
                 <input type="text" name="coment" id="coment" placeholder="Add a comment...">
             </label>
             <button onclick="saveComent()" type="submit">save</button>
         </form>
         `;
-
+  
         //puxei os parametros informados pelo evento e com ele descobri que consigo selecionar o box em que foi apertado o botão pela função path[1]
         //adicionei o comando para adicionar a nova div após o path[1]
         console.log(e);
         let event = e;
         console.log(event.path[1]);
         event.path[4].after(newDiv);
-
+        loop();
     });
 }
 
@@ -71,7 +72,7 @@ function saveComent () {
 function text () {
 
     document.querySelector("#reply").innerHTML = `
-    
+    <img class="user--avatar" src="" alt="user avatar">
     <button onclick="edit()">Edit</button>
     <button onclick="remove()">Delete</button>
     <output id="finalcoment"></output>
@@ -80,6 +81,7 @@ function text () {
    
     let outputValue = document.getElementById("finalcoment");
     outputValue.innerHTML = localStorage.getItem("test");
+    loop();
     
 }
 
@@ -90,6 +92,7 @@ function edit () {
     document.querySelector("#reply").innerHTML = `
     
     <form onsubmit="return false">
+        <img class="user--avatar" src="" alt="user avatar">
         <label for="coment">
             <input type="text" name="coment" id="coment" placeholder="Add a comment...">
         </label>
@@ -99,6 +102,7 @@ function edit () {
 
     let valueInput = document.getElementById("coment");
     valueInput.value = localStorage.getItem("test");
+    loop();
 }
 
 function remove () {

@@ -8,6 +8,7 @@ Tarefas projeto
 [X] adicionar funcionalidade de editar o conteúdo da caixa selecionada
 [X] adicionar funcionalidade de excluir o comentário ao clicar em delete
 [X] adicionar todos os box padrões com os textos internos
-[ ] adicionar avatar e nome do usuário
+[X] adicionar avatar variável
+[ ] adicionar nome usuário variável
 [ ] adicionar texto dos comentários
 [ ] adicionar contador de curtidas
