@@ -9,6 +9,7 @@ Tarefas projeto
 [X] adicionar funcionalidade de excluir o comentário ao clicar em delete
 [X] adicionar todos os box padrões com os textos internos
 [X] adicionar avatar variável
-[ ] adicionar nome usuário variável
+[X] adicionar nome usuário variável
+[ ] adicionar dia do comentário variável
 [ ] adicionar texto dos comentários
 [ ] adicionar contador de curtidas

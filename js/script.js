@@ -12,7 +12,7 @@ for (let i = 0; i < button.length; i++) {
     button[i].addEventListener('click', (e) => {
         
         let newDiv = document.createElement("div");
-        newDiv.className = "col-sm-10 offset-sm-2 mt-4 box";
+        newDiv.className = "col-sm-11 offset-sm-1 mt-4 box";
         newDiv.id = "reply";
         newDiv.innerHTML = `
         
@@ -38,7 +38,7 @@ for (let i = 0; i < button.length; i++) {
 function criarComentário () {
 
     let newDiv = document.createElement("div");
-    newDiv.className = "col-sm-10 offset-sm-2 box";
+    newDiv.className = "col-sm-11 offset-sm-1 box";
     newDiv.id = "reply";
     newDiv.innerHTML = `
     
@@ -72,10 +72,25 @@ function saveComent () {
 function text () {
 
     document.querySelector("#reply").innerHTML = `
-    <img class="user--avatar" src="" alt="user avatar">
-    <button onclick="edit()">Edit</button>
-    <button onclick="remove()">Delete</button>
-    <output id="finalcoment"></output>
+
+    <div class="rating"></div>
+    <div class="user--data">
+        <div class="user">
+            <div class="user--info">
+                <img class="user--avatar" src="" alt="user avatar">
+                <h1 class="user--id">amyrobson</h1>
+                <h2 class="time">1 month ago</h2>
+            </div>
+            
+            <div>
+                <button onclick="remove()">Delete</button>
+                <button onclick="edit()">Edit</button>
+            </div>
+        </div>
+        
+        <div class="message">
+            <output id="finalcoment"></output>
+        </div>
     
     `;
    
