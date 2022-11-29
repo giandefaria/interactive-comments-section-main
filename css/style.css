@@ -1,21 +1,23 @@
 html {
-    width: 1440px;
     margin: 0 auto;
+    background: hsl(228, 33%, 97%);
 
+}
+body {
+    background-color: hsl(228, 33%, 97%);
 }
 
 .container {
-    display: grid;
+    /*display: inline-grid;
     grid-template-columns: 1fr;
-    gap: 50px;
-    margin: 100px 0;
+    justify-items: center;
+    gap: 50px;*/
+    margin: 100px auto;
 
 }
 
 .box {
-    width: 70vw;
-    height: 20vh;
-    background: lightgray;
+    background: hsl(0, 0%, 100%);
 }
 
 .user {

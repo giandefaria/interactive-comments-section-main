@@ -12,7 +12,7 @@ for (let i = 0; i < button.length; i++) {
     button[i].addEventListener('click', (e) => {
         
         let newDiv = document.createElement("div");
-        newDiv.className = "col-md-9 offset-md-3 box";
+        newDiv.className = "col-sm-10 offset-sm-2 mt-4 box";
         newDiv.id = "reply";
         newDiv.innerHTML = `
         
@@ -29,7 +29,7 @@ for (let i = 0; i < button.length; i++) {
         console.log(e);
         let event = e;
         console.log(event.path[1]);
-        event.path[1].after(newDiv);
+        event.path[4].after(newDiv);
 
     });
 }
@@ -37,7 +37,7 @@ for (let i = 0; i < button.length; i++) {
 function criarComentário () {
 
     let newDiv = document.createElement("div");
-    newDiv.className = "col-md-9 offset-md-3 box";
+    newDiv.className = "col-sm-10 offset-sm-2 box";
     newDiv.id = "reply";
     newDiv.innerHTML = `
     

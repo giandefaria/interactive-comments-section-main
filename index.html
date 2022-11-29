@@ -7,66 +7,119 @@
     <title>Interactive comments</title>
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/dataJson.js"></script>
 </head>
 <body>
 
     <main class="container">
-        <div class="col-md-12 box teste display" id="ammyRobson">
-            <div class="rating"></div>
-            <div class="user--data"> 
+        <div class="col-sm-12 mb-4 teste display" id="ammyRobson">
+            <div class="container--coment box">
+                <div class="rating"></div>
+                <div class="user--data"> 
 
-                <div class="user">
-                    <div class="user--info">
-                        <img src="images/avatars/image-amyrobson.png" alt="amyrobson">
-                        <h1 class="id">amyrobson</h1>
-                        <h2 class="time">1 month ago</h2>
-                    </div>  
+                    <div class="user">
+                        <div class="user--info">
+                            <img src="images/avatars/image-amyrobson.png" alt="amyrobson">
+                            <h1 class="id">amyrobson</h1>
+                            <h2 class="time">1 month ago</h2>
+                        </div>  
 
-                    <div>
-                        <button class="button">reply</button>
+                        <div>
+                            <button class="button">reply</button>
+                        </div>
+
                     </div>
 
+                    <div class="message">
+                        <p class="text"></p>
+                    </div>  
+
                 </div>
+            </div>    
 
-                <div class="message">
-                    <p class="text"></p>
-                </div>  
+        </div>
 
+        <div class="col-sm-12 mb-4 teste">
+            <div class="container--coment box">
+                <div class="rating"></div>
+                <div class="user--data"> 
+
+                    <div class="user">
+                        <div class="user--info">
+                            <img src="images/avatars/image-amyrobson.png" alt="amyrobson">
+                            <h1 class="id">amyrobson</h1>
+                            <h2 class="time">1 month ago</h2>
+                        </div>  
+
+                        <div>
+                            <button class="button">reply</button>
+                        </div>
+
+                    </div>
+
+                    <div class="message">
+                        <p class="text"></p>
+                    </div>  
+
+                </div>
             </div>
-
-        </div>
-
-        <div class="col-md-12 box teste">
-            <button class="button" >reply</button>
-            <p class="text"></p>
-
+     
         </div>
     
-        <div class="col-md-9 offset-md-3 box">
-            <button>reply</button>
-            <p class="reply--text"></p>
-    
+        <div class="col-sm-10 offset-sm-2">
+            <div class="container--reply box">
+                <div class="rating"></div>
+                <div class="user--data"> 
+                    <div class="user">
+                        <div class="user--info">
+                            <img src="images/avatars/image-amyrobson.png" alt="amyrobson">
+                            <h1 class="id">amyrobson</h1>
+                            <h2 class="time">1 month ago</h2>
+                        </div>  
+
+                        <div>
+                            <button class="button">reply</button>
+                        </div>
+
+                    </div>
+                    <div class="message">
+                        <p class="reply--text"></p>
+                    </div>  
+                </div>
+            </div>       
         </div>
 
-        <div class="col-md-9 offset-md-3 box">
-            <button>reply</button>
-            <p class="reply--text"></p>
-    
+        <div class="col-sm-10 offset-sm-2">
+            <div class="container--reply box">
+                <div class="rating"></div>
+                <div class="user--data"> 
+                    <div class="user">
+                        <div class="user--info">
+                            <img src="images/avatars/image-amyrobson.png" alt="amyrobson">
+                            <h1 class="id">amyrobson</h1>
+                            <h2 class="time">1 month ago</h2>
+                        </div>  
+                        <div>
+                            <button class="button">reply</button>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <p class="reply--text"></p>
+                    </div>  
+                </div>
+            </div>
         </div>
     
-        <div class="col-md-12 box">
+        <div class="col-sm-12 box">
             <form onsubmit="return false">
                 <label for="coment">
                     <input type="text" name="coment" id="coment" placeholder="Add a comment...">
                 </label>
                 <button onclick="saveComent()" type="submit">SEND</button>
             </form>
-
         </div>
-
 
     </main>
  
