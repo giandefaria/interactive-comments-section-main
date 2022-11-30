@@ -97,12 +97,13 @@
                 <div class="user--data"> 
                     <div class="user">
                         <div class="user--info">
-                            <img class="avatar--reply" src="" alt="amyrobson">
-                            <h1 class="id--reply">amyrobson</h1>
+                            <img class="avatar--reply" src="" alt="">
+                            <h1 class="id--reply"></h1>
                             <h2 class="time">1 month ago</h2>
                         </div>  
                         <div>
-                            <button class="button">reply</button>
+                            <button class="delete" onclick="del()">Delete</button>
+                            <button class="edit" onclick="editar()">Edit</button>
                         </div>
                     </div>
                     <div class="message">
@@ -112,13 +113,13 @@
             </div>
         </div>
     
-        <div class="col-sm-12 box">
-            <form onsubmit="return false">
+        <div class="col-sm-12 box sendBox">
+            <form class="sendBox--form" onsubmit="return false">
                 <img class="user--avatar" src="" alt="user avatar">
-                <label for="coment">
-                    <input type="text" name="coment" id="coment" placeholder="Add a comment...">
+                <label for="comment" class="box--comment">
+                    <input type="text" name="comment" class="box--comment--input" placeholder="Add a comment...">
                 </label>
-                <button onclick="saveComent()" type="submit">SEND</button>
+                <button class="send" onclick="criarComentario()" type="submit">SEND</button>
             </form>
         </div>
 

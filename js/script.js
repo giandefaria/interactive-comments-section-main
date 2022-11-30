@@ -1,27 +1,27 @@
 const button = document.querySelectorAll(".button");
-const reply = document.create
+let edit = document.querySelectorAll(".edit");
+let reply = document.querySelectorAll(".reply");
 
-let array = [];
+let editArray = 0;
 //Crio uma div de reply, dentro dessa div, adiciono um botão de reply e o formulário
 
 for (let i = 0; i < button.length; i++) {
   
-    array.push(i)
-    console.log(array[i]);
+    //array.push(i)
+    //console.log(array[i]);
 
     button[i].addEventListener('click', (e) => {
-        
         let newDiv = document.createElement("div");
-        newDiv.className = "col-sm-11 offset-sm-1 mt-4 box";
+        newDiv.className = "col-sm-11 offset-sm-1 mt-4 reply box sendBox";
         newDiv.id = "reply";
         newDiv.innerHTML = `
         
-        <form onsubmit="return false">
+        <form onsubmit="return false" class="sendBox--form">
             <img class="user--avatar" src="" alt="user avatar">
-            <label for="coment">
-                <input type="text" name="coment" id="coment" placeholder="Add a comment...">
+            <label for="coment" class="box--comment">
+                <input type="text" name="coment" id="coment" class="box--comment--input" placeholder="Add a comment...">
             </label>
-            <button onclick="saveComent()" type="submit">save</button>
+            <button class="send" onclick="saveComent()" type="submit">REPLY</button>
         </form>
         `;
   
@@ -35,22 +35,35 @@ for (let i = 0; i < button.length; i++) {
     });
 }
 
-function criarComentário () {
+function criarComentario () {
 
     let newDiv = document.createElement("div");
-    newDiv.className = "col-sm-11 offset-sm-1 box";
-    newDiv.id = "reply";
+    newDiv.className = "col-sm-12 mb-4 teste";
+    newDiv.id = "user--coment";
     newDiv.innerHTML = `
     
-    <form onsubmit="return false">
-        <label for="coment">
-            <input type="text" name="coment" id="coment" placeholder="Add a comment...">
-        </label>
-        <button onclick="saveComent()" type="submit">save</button>
-    </form>
+    <div class="rating"></div>
+    <div class="user--data">
+        <div class="user">
+            <div class="user--info">
+                <img class="user--avatar" src="" alt="user avatar">
+                <h1 class="user--id">amyrobson</h1>
+                <h2 class="time">1 month ago</h2>
+            </div>
+            
+            <div>
+                <button class="delete" onclick="del()">Delete</button>
+                <button class="edit" onclick="editar()">Edit</button>
+            </div>
+        </div>
+        
+        <div class="message">
+            <output id="finalcoment"></output>
+        </div>
+    </div>    
     `;
-    document.querySelector("body > main > .teste").after(newDiv);
-
+    document.querySelector("body > main > .sendBox").before(newDiv);
+    loop();
 };
 
 
@@ -63,15 +76,18 @@ function saveComent () {
     if (valueInput == "") {
         alert("Insert a message")
     } else {
-         text();
+         text(editArray);
+         setUserName();
+         refreshArray();
       }
 
 }
 
 //função que pega o comentário no localstorage e adiciona na div criada, através de um output
-function text () {
-
-    document.querySelector("#reply").innerHTML = `
+function text (x) {
+    console.log(x);
+    let reply = document.querySelectorAll(".reply");
+    reply[x].innerHTML = `
 
     <div class="rating"></div>
     <div class="user--data">
@@ -83,45 +99,73 @@ function text () {
             </div>
             
             <div>
-                <button onclick="remove()">Delete</button>
-                <button onclick="edit()">Edit</button>
+                <button class="delete" onclick="del()">Delete</button>
+                <button class="edit" onclick="editar()">Edit</button>
             </div>
         </div>
         
         <div class="message">
-            <output id="finalcoment"></output>
+            <output class="finalcoment"></output>
         </div>
+    </div>    
     
     `;
    
-    let outputValue = document.getElementById("finalcoment");
-    outputValue.innerHTML = localStorage.getItem("test");
+    let outputValue = document.querySelectorAll(".finalcoment");
+    outputValue[x].innerHTML = localStorage.getItem("test");
     loop();
     
 }
 
 
 //comando de edição, abre a caixa do input e adiciona o valor no localStorage 
-function edit () {
 
-    document.querySelector("#reply").innerHTML = `
+
+function editar () {
     
-    <form onsubmit="return false">
-        <img class="user--avatar" src="" alt="user avatar">
-        <label for="coment">
-            <input type="text" name="coment" id="coment" placeholder="Add a comment...">
-        </label>
-        <button onclick="saveComent()" type="submit">save</button>
-    </form>
-    `;
+    refreshArray();
 
-    let valueInput = document.getElementById("coment");
-    valueInput.value = localStorage.getItem("test");
-    loop();
-}
+    for (let i = 0; i < edit.length; i++) {
 
-function remove () {
-    let element = document.getElementById("reply");
-    element.remove();
+        edit[i].addEventListener('click', () => {
+            console.log("ok");
+            console.log(i);
+            editArray = i;
+            reply[i].innerHTML = `
+    
+            <form class="sendBox--form" onsubmit="return false">
+                <img class="user--avatar" src="" alt="user avatar">
+                <label for="coment" class="box--comment">
+                    <input type="text" name="coment" id="coment" class="box--comment--input" placeholder="Add a comment...">
+                </label>
+                <button class="send" onclick="saveComent()" type="submit">UPDATE</button>
+            </form>
+            `;
+        
+            let valueInput = document.getElementById("coment");
+            valueInput.value = localStorage.getItem("test");
+            loop();
+
+
+        });
+        
+    }
+}    
+
+
+
+function del ( ) {
+    let element = document.querySelectorAll(".reply");
+    let deleteButton = document.querySelectorAll(".delete")
+    for (let i = 0; i < deleteButton.length; i++) {
+        let deleteButton = document.querySelectorAll(".delete");
+        console.log(i);
+        deleteButton[i].addEventListener('click', () => {
+        console.log(deleteButton[i]);
+        element[i].remove();
+
+        })
+        
+    }
+    
 };
-

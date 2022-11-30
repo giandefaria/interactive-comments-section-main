@@ -26,14 +26,31 @@ for (let i = 0; i < replyText.length; i++) {
 function loop () {
 
     const userAvatar = document.querySelectorAll(".user--avatar");
-    const userId = document.querySelectorAll(".user--id")
+
     for (let i = 0; i < userAvatar.length; i++) {
         
         userAvatar[i].src = obj.currentUser.image.webp;
-        userId[i].innerHTML = obj.currentUser.username;
+
         console.log(i);
         
     }
 }
 
 loop();
+
+function setUserName () {
+
+    const userId = document.querySelectorAll(".user--id");
+    for (let i = 0; i < userId.length; i++) {
+        
+        userId[i].innerHTML = obj.currentUser.username;
+
+        console.log(i);
+    }
+
+}
+
+function refreshArray () {
+    edit = document.querySelectorAll(".edit");
+    reply = document.querySelectorAll(".reply")
+}
