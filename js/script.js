@@ -5,6 +5,9 @@ let reply = document.querySelectorAll(".reply");
 let editArray = 0;
 //Crio uma div de reply, dentro dessa div, adiciono um botão de reply e o formulário
 
+let teste
+let id = 0;
+
 for (let i = 0; i < button.length; i++) {
   
     //array.push(i)
@@ -21,7 +24,7 @@ for (let i = 0; i < button.length; i++) {
             <label for="coment" class="box--comment">
                 <input type="text" name="coment" id="coment" class="box--comment--input" placeholder="Add a comment...">
             </label>
-            <button class="send" onclick="saveComent()" type="submit">REPLY</button>
+            <button class="send content" onclick="saveComent()" type="submit">REPLY</button>
         </form>
         `;
   
@@ -66,6 +69,26 @@ function criarComentario () {
     loop();
 };
 
+/*let content;
+let caminhoEditar;
+function localizar () {
+    content = document.querySelectorAll(".content")
+    console.log("ok")
+
+    for (let i = 0; i < content.length; i++) {
+        
+        content[i].addEventListener('click', (e) => {
+            let evento = e;
+            console.log(evento);
+
+            caminhoEditar = evento.path[2];
+        })
+        
+    }
+};*/
+
+setInterval(localizar, 1000);
+
 
 //função que salva o comentário no localstorage e cria um output com o comentário escrito 
 function saveComent () {
@@ -87,6 +110,11 @@ function saveComent () {
 function text (x) {
     console.log(x);
     let reply = document.querySelectorAll(".reply");
+
+    for (let i = 0; i < reply.length; i++) {
+        
+        
+    }
     reply[x].innerHTML = `
 
     <div class="rating"></div>
@@ -112,7 +140,11 @@ function text (x) {
     `;
    
     let outputValue = document.querySelectorAll(".finalcoment");
-    outputValue[x].innerHTML = localStorage.getItem("test");
+    console.log(outputValue);
+ 
+    outputValue[0].innerHTML = localStorage.getItem("test");
+
+
     loop();
     
 }
@@ -128,6 +160,8 @@ function editar () {
     for (let i = 0; i < edit.length; i++) {
 
         edit[i].addEventListener('click', () => {
+
+
             console.log("ok");
             console.log(i);
             editArray = i;

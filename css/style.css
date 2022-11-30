@@ -1,10 +1,12 @@
 html {
     margin: 0 auto;
     background: hsl(228, 33%, 97%);
+    font-family: 'Rubik', sans-serif;
 
 }
 body {
     background-color: hsl(228, 33%, 97%);
+    font-family: 'Rubik', sans-serif;
 }
 
 .container {
@@ -20,6 +22,7 @@ body {
     background: hsl(0, 0%, 100%);
 }
 
+
 .user {
     display: flex;
     align-items: center;
@@ -34,6 +37,10 @@ body {
     gap: 25px;
 }
 
+.paddingBox {
+    padding: 30px;
+}
+
 .sendBox {
     padding: 30px;
 }
@@ -42,6 +49,23 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+}
+
+.id--comment, .id--reply, .time {
+    font-size: large;
+}
+
+.id--comment, .id--reply {
+    font-weight: 700;
+}
+
+.time {
+    font-weight: 400;
+    color: hsl(211, 10%, 45%);
+}
+
+.text, .reply--text {
+    color: hsl(211, 10%, 45%);
 }
 
 .box--comment {
