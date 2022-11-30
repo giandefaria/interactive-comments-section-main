@@ -117,7 +117,11 @@ function text (x) {
     }
     reply[x].innerHTML = `
 
-    <div class="rating"></div>
+    <div class="rating">
+        <img src="images/icon-plus.svg" alt="icon plus">
+        <output type="number" id="rating">0</output>
+        <img src="images/icon-minus.svg" alt="icon minus">
+    </div>
     <div class="user--data">
         <div class="user">
             <div class="user--info">
