@@ -7,7 +7,7 @@ html {
 body {
     background-color: hsl(228, 33%, 97%);
     font-family: 'Rubik', sans-serif;
-    padding: 0 500px;
+    padding: 0 300px;
 }
 
 .container {
@@ -37,6 +37,32 @@ body {
     height: 100px;
     padding: 16px;
     border-radius: 10px;
+}
+
+.button, .edit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-style: none;
+    background: white;
+    font-weight: 600;
+    color: hsl(238, 40%, 52%);
+
+}
+
+.delete {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-style: none;
+    background: white;
+    margin-right: 10px;
+    font-weight: 600;
+    color: hsl(358, 79%, 66%);
+}
+
+.user--data {
+    width: 100%;
 }
 
 

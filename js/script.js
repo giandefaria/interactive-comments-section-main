@@ -54,9 +54,9 @@ function criarComentario () {
                 <h2 class="time">1 month ago</h2>
             </div>
             
-            <div>
-                <button class="delete" onclick="del()">Delete</button>
-                <button class="edit" onclick="editar()">Edit</button>
+            <div class="d-flex">
+                <button class="delete" onclick="del()"><img src="images/icon-delete.svg" alt="delete">Delete</button>
+                <button class="edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
             </div>
         </div>
         
@@ -130,9 +130,9 @@ function text (x) {
                 <h2 class="time">1 month ago</h2>
             </div>
             
-            <div>
-                <button class="delete" onclick="del()">Delete</button>
-                <button class="edit" onclick="editar()">Edit</button>
+            <div class="d-flex">
+                <button class="delete" onclick="del()"><img src="images/icon-delete.svg" alt="delete">Delete</button>
+                <button class="edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
             </div>
         </div>
         

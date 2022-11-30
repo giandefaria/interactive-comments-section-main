@@ -4,7 +4,7 @@ Tarefas projeto
 [X] adicionar botão reply
 [X] adicionar a abertura de uma caixa de resposta
 [X] adicionar o texto da resposta no html ao clicar send
-[X] adicionar botão de editar e deletar
+[X] adicionar imagem botão de replica, editar, deletar e enviar
 [ ] adicionar funcionalidade de editar o conteúdo da caixa selecionada
 [X] adicionar funcionalidade de excluir o comentário ao clicar em delete
 [X] adicionar todos os box padrões com os textos internos
