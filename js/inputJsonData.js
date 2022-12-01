@@ -4,6 +4,7 @@ const avatarImgComment = document.querySelectorAll(".avatar--comment");
 const avatarImgReply = document.querySelectorAll(".avatar--reply");
 const idNameComment = document.querySelectorAll(".id--comment");
 const idNameReply = document.querySelectorAll(".id--reply");
+const replyingTo = document.querySelectorAll(".mention--reply");
 
 
 //let src = obj.comments[0].user.image.webp;
@@ -20,6 +21,8 @@ for (let i = 0; i < replyText.length; i++) {
     replyText[i].innerHTML = obj.comments[1].replies[i].content;
     avatarImgReply[i].src = obj.comments[1].replies[i].user.image.webp;
     idNameReply[i].innerHTML = obj.comments[1].replies[i].user.username;
+    replyingTo[i].innerHTML = "@" + obj.comments[1].replies[i].replyingTo;
+
     
 }
 

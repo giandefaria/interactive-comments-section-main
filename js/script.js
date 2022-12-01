@@ -6,7 +6,8 @@ let editArray = 0;
 //Crio uma div de reply, dentro dessa div, adiciono um botão de reply e o formulário
 
 let teste
-let id = 0;
+let id = 1;
+let mention;
 
 for (let i = 0; i < button.length; i++) {
   
@@ -22,7 +23,7 @@ for (let i = 0; i < button.length; i++) {
         <form onsubmit="return false" class="sendBox--form">
             <img class="user--avatar" src="" alt="user avatar">
             <label for="coment" class="box--comment">
-                <input type="text" name="coment" id="coment" class="box--comment--input" placeholder="Add a comment...">
+                <span class="span"></span><input type="text" name="coment" id="coment" class="box--comment--input" placeholder="Add a comment...">
             </label>
             <button class="send content" onclick="saveComent()" type="submit">REPLY</button>
         </form>
@@ -34,6 +35,7 @@ for (let i = 0; i < button.length; i++) {
         let event = e;
         console.log(event.path[1]);
         event.path[4].after(newDiv);
+        mention = event.path[5].id;
         loop();
     });
 }
@@ -87,7 +89,7 @@ function localizar () {
     }
 };*/
 
-setInterval(localizar, 1000);
+//setInterval(localizar, 1000);
 
 
 //função que salva o comentário no localstorage e cria um output com o comentário escrito 
@@ -137,16 +139,19 @@ function text (x) {
         </div>
         
         <div class="message">
-            <output class="finalcoment"></output>
+            <span class="span"></span><output class="finalcoment"></output>
         </div>
     </div>    
     
     `;
    
     let outputValue = document.querySelectorAll(".finalcoment");
+    let mentionValue = document.querySelectorAll(".span");
     console.log(outputValue);
- 
+
     outputValue[0].innerHTML = localStorage.getItem("test");
+    mentionValue[0].innerHTML = "@" + mention + " ";
+ 
 
 
     loop();

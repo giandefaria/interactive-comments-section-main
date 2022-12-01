@@ -86,6 +86,16 @@ body {
     gap: 25px;
 }
 
+.span, .mention--reply {
+    font-weight: 600;
+    color: hsl(238, 40%, 52%);
+}
+
+.mention--reply, .span {
+    float: left;
+    margin-right: 4px;
+}
+
 .avatar--comment, .avatar--reply {
     width: 40px;
 }
