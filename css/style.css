@@ -23,7 +23,7 @@ body {
     background: hsl(0, 0%, 100%);
     border-radius: 12px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 30px;
 }
@@ -31,12 +31,17 @@ body {
 .rating {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     background: hsl(228, 33%, 97%);
+    font-weight: 600;
     color: hsl(238, 40%, 52%);
     height: 100px;
     padding: 16px;
     border-radius: 10px;
+}
+
+.minus {
+    padding: 3px 0;
 }
 
 .button, .edit {
@@ -71,13 +76,18 @@ body {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .user--info {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: row;
     gap: 25px;
+}
+
+.avatar--comment, .avatar--reply {
+    width: 40px;
 }
 
 .paddingBox {
