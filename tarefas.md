@@ -14,7 +14,7 @@ Tarefas projeto
 [X] adicionar as fontes
 [X] adicionar texto dos comentários
 [X] adicionei as menções
-[ ] adicionar dia do comentário variável
+[X] adicionar dia do comentário variável
 [X] adicionar contador de curtidas 
 [X] ajustar visual contador de curtidas
 [ ] adicionar funcionalidade no contador de curtidas

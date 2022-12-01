@@ -16,7 +16,7 @@ for (let i = 0; i < button.length; i++) {
 
     button[i].addEventListener('click', (e) => {
         let newDiv = document.createElement("div");
-        newDiv.className = "col-sm-11 offset-sm-1 mt-4 reply box sendBox";
+        newDiv.className = "col-sm-11 offset-sm-1 mt-4 reply box sendBox  userReply";
         newDiv.id = "reply";
         newDiv.innerHTML = `
         
@@ -63,7 +63,7 @@ function criarComentario () {
         </div>
         
         <div class="message">
-            <output id="finalcoment"></output>
+            <output id="finalcoment insert"></output>
         </div>
     </div>    
     `;
@@ -93,10 +93,10 @@ function localizar () {
 
 
 //função que salva o comentário no localstorage e cria um output com o comentário escrito 
-function saveComent () {
+/*function saveComent () {
 
     let valueInput = document.getElementById("coment").value;
-    localStorage.setItem("test", valueInput);
+    localStorage.setItem(mention, valueInput);
 
     if (valueInput == "") {
         alert("Insert a message")
@@ -106,18 +106,47 @@ function saveComent () {
          refreshArray();
       }
 
+}*/
+
+function saveComent () {
+    let saveButton = document.querySelectorAll(".content");
+    for (let i = 0; i < saveButton.length; i++) {
+        saveButton[i].addEventListener('click', (e) => {
+
+            
+            let event = e;
+            console.log(event);
+            let caminho = event.path[2];
+            let valueInput = document.getElementById("coment").value;
+            localStorage.setItem(mention, valueInput);
+        
+            if (valueInput == "") {
+                alert("Insert a message")
+            } else {
+                 text(caminho, i);
+                 setUserName();
+                 refreshArray();
+              }
+
+
+        })
+
+    
+    }
+
 }
 
 //função que pega o comentário no localstorage e adiciona na div criada, através de um output
-function text (x) {
-    console.log(x);
-    let reply = document.querySelectorAll(".reply");
+function text (caminho, i) {
+    console.log(caminho, i);
+    let reply = document.querySelectorAll(".userReply");
 
     for (let i = 0; i < reply.length; i++) {
         
+        let arrayReply = i;
         
     }
-    reply[x].innerHTML = `
+    caminho.innerHTML = `
 
     <div class="rating">
         <img class="plus" src="images/icon-plus.svg" alt="icon plus">
@@ -139,18 +168,18 @@ function text (x) {
         </div>
         
         <div class="message">
-            <span class="span"></span><output class="finalcoment"></output>
+            <span class="span"></span><output class="finalcoment insert"></output>
         </div>
     </div>    
     
     `;
    
-    let outputValue = document.querySelectorAll(".finalcoment");
+    let outputValue = document.querySelectorAll(".insert");
     let mentionValue = document.querySelectorAll(".span");
     console.log(outputValue);
 
-    outputValue[0].innerHTML = localStorage.getItem("test");
-    mentionValue[0].innerHTML = "@" + mention + " ";
+    outputValue[editArray].innerHTML = localStorage.getItem(mention);
+    mentionValue[editArray].innerHTML = "@" + mention + " ";
  
 
 
@@ -162,31 +191,35 @@ function text (x) {
 //comando de edição, abre a caixa do input e adiciona o valor no localStorage 
 
 
+
 function editar () {
     
     refreshArray();
 
     for (let i = 0; i < edit.length; i++) {
+        
+        edit[i].addEventListener('click', (e) => {
 
-        edit[i].addEventListener('click', () => {
-
-
-            console.log("ok");
+            let event = e;
+   
+            console.log(event);
+            let caminho = event.path[3];
+            mention = event.path[5].id;
             console.log(i);
             editArray = i;
-            reply[i].innerHTML = `
+            caminho.innerHTML = `
     
             <form class="sendBox--form" onsubmit="return false">
                 <img class="user--avatar" src="" alt="user avatar">
                 <label for="coment" class="box--comment">
                     <input type="text" name="coment" id="coment" class="box--comment--input" placeholder="Add a comment...">
                 </label>
-                <button class="send" onclick="saveComent()" type="submit">UPDATE</button>
+                <button class="send content" onclick="update()" type="submit">UPDATE</button>
             </form>
             `;
         
             let valueInput = document.getElementById("coment");
-            valueInput.value = localStorage.getItem("test");
+            valueInput.value = localStorage.getItem(mention);
             loop();
 
 
@@ -194,6 +227,36 @@ function editar () {
         
     }
 }    
+
+function update () {
+    let updateButton = document.querySelectorAll(".content");
+    for (let i = 0; i < updateButton.length; i++) {
+        updateButton[i].addEventListener('click', (e) => {
+
+            
+            let event = e;
+            console.log(event);
+            let caminho = event.path[3];
+            let valueInput = document.getElementById("coment").value;
+            localStorage.setItem(mention, valueInput);
+        
+            if (valueInput == "") {
+                alert("Insert a message")
+            } else {
+                 text(caminho, i);
+                 setUserName();
+                 refreshArray();
+              }
+
+
+        })
+
+    
+    }
+
+
+
+}
 
 
 
