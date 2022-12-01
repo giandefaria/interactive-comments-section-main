@@ -5,7 +5,7 @@ Tarefas projeto
 [X] adicionar a abertura de uma caixa de resposta
 [X] adicionar o texto da resposta no html ao clicar send
 [X] adicionar imagem botão de replica, editar, deletar e enviar
-[ ] adicionar funcionalidade de editar o conteúdo da caixa selecionada
+[X] adicionar funcionalidade de editar o conteúdo da caixa selecionada
 [X] adicionar funcionalidade de excluir o comentário ao clicar em delete
 [X] adicionar todos os box padrões com os textos internos
 [X] adicionar avatar variável
@@ -17,4 +17,7 @@ Tarefas projeto
 [X] adicionar dia do comentário variável
 [X] adicionar contador de curtidas 
 [X] ajustar visual contador de curtidas
+[ ] adicionar opção de comentário
 [ ] adicionar funcionalidade no contador de curtidas
+[ ] limpar o código
+[ ] Ajustar media queries

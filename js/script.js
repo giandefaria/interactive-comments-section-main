@@ -25,7 +25,7 @@ for (let i = 0; i < button.length; i++) {
             <label for="coment" class="box--comment">
                 <span class="span"></span><input type="text" name="coment" id="coment" class="box--comment--input" placeholder="Add a comment...">
             </label>
-            <button class="send content" onclick="saveComent()" type="submit">REPLY</button>
+            <button class="send content insert" onclick="saveComent()" type="submit">REPLY</button>
         </form>
         `;
   
@@ -109,11 +109,11 @@ function localizar () {
 }*/
 
 function saveComent () {
-    let saveButton = document.querySelectorAll(".content");
+    let saveButton = document.querySelectorAll(".insert");
     for (let i = 0; i < saveButton.length; i++) {
         saveButton[i].addEventListener('click', (e) => {
 
-            
+            editArray = i;
             let event = e;
             console.log(event);
             let caminho = event.path[2];
@@ -146,7 +146,7 @@ function text (caminho, i) {
         let arrayReply = i;
         
     }
-    caminho.innerHTML = `
+    reply[editArray].innerHTML = `
 
     <div class="rating">
         <img class="plus" src="images/icon-plus.svg" alt="icon plus">

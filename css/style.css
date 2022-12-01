@@ -33,6 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     background: hsl(228, 33%, 97%);
     font-weight: 600;
     color: hsl(238, 40%, 52%);
