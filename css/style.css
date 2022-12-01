@@ -2,12 +2,13 @@ html {
     margin: 0 auto;
     background: hsl(228, 33%, 97%);
     font-family: 'Rubik', sans-serif;
+    width: 800px;
 
 }
 body {
     background-color: hsl(228, 33%, 97%);
     font-family: 'Rubik', sans-serif;
-    padding: 0 300px;
+
 }
 
 .container {
