@@ -55,7 +55,7 @@ let send = document.querySelectorAll(".comment--up");
     newDiv.innerHTML = `
     
     <div class="container--coment box paddingBox">
-        <div class="rating--desktop">
+        <div class="rating rating--desktop">
             <img class="plus" src="images/icon-plus.svg" alt="icon plus">
             <output type="number" class="rating--value" id="rating">0</output>
             <img class="minus" src="images/icon-minus.svg" alt="icon minus">
@@ -158,7 +158,7 @@ function text (caminho, i) {
 
     userReply[editArray].innerHTML = `
 
-    <div class="rating--desktop">
+    <div class="rating rating--desktop">
         <img class="plus" src="images/icon-plus.svg" alt="icon plus">
         <output type="number" class="rating--value" id="rating">0</output>
         <img class="minus" src="images/icon-minus.svg" alt="icon minus">
