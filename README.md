@@ -1,10 +1,10 @@
 # Frontend Mentor - Interactive comments section
 
-![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Interactive comments section coding challenge](./assets/design/desktop-preview.jpg)
 
 * Mobile preview
 
-![Design preview in mobile](./design/mobile-design.jpg)
+![Design preview in mobile](./assets/design/mobile-design.jpg)
 
 
 ## Welcome! 👋
