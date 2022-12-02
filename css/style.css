@@ -190,14 +190,6 @@ body {
 
 @media screen and (max-width: 574px) {
 
- /*   .icons--desktop--flex {
-        display: none;
-    }
-
-    .icons--desktop, .rating--desktop {
-        display: none;
-    }
-*/
 
 .icons--mobile, .rating--mobile {
     display: none;
@@ -205,30 +197,6 @@ body {
 .icons--mobile--rating{
     display: none;
 }
-
-/*
-    .rating--mobile {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        background: white;
-        padding: unset;
-    }
-    .icons--mobile--rating {
-        display: flex;
-        background: hsl(228, 33%, 97%);
-        align-items: center;
-        justify-content: space-around;
-        gap: 10px;
-        padding: 10px 26px;
-        border-radius: 10px;
-    }
-
-    .icons--mobile--flex {
-        display: flex;
-    }
-*/
 
     .box {
         flex-direction: column;
@@ -286,7 +254,7 @@ body {
     /* tentativa de mudança */
     .paddingBox {
         position: relative;
-        height: 230px;
+        height: 280px;
     }
 
     .rating {
