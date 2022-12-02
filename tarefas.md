@@ -18,6 +18,7 @@ Tarefas projeto
 [X] adicionar contador de curtidas 
 [X] ajustar visual contador de curtidas
 [ ] adicionar opção de comentário
-[ ] adicionar funcionalidade no contador de curtidas
+[X] adicionar funcionalidade no contador de curtidas
+[X] limitar o contador
 [ ] limpar o código
 [ ] Ajustar media queries

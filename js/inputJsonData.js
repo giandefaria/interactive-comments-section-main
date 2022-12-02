@@ -58,6 +58,18 @@ function setUserName () {
 }
 
 function refreshArray () {
-    edit = document.querySelectorAll(".edit");
-    reply = document.querySelectorAll(".reply")
-}
+
+
+        edit = document.querySelectorAll(".edit");
+        reply = document.querySelectorAll(".reply")
+        userReply = document.querySelectorAll(".userReply");
+        saveButton = document.querySelectorAll(".insert");
+        saveComent();
+        editar();
+        update();
+        del();
+        
+};
+
+setInterval(refreshArray, 1000);
+

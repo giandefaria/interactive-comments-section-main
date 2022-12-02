@@ -46,6 +46,14 @@ body {
     padding: 3px 0;
 }
 
+.minus, .plus {
+    cursor: pointer;
+}
+
+.minus:active, .plus:active {
+    scale: 1.5;
+}
+
 .button, .edit {
     display: flex;
     align-items: center;
@@ -55,6 +63,10 @@ body {
     font-weight: 600;
     color: hsl(238, 40%, 52%);
 
+}
+
+.button:active, .edit:active, .delete:active {
+    scale: 1.2;
 }
 
 .delete {

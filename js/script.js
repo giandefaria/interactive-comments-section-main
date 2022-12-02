@@ -1,4 +1,6 @@
 const button = document.querySelectorAll(".button");
+const buttonPlus = document.querySelectorAll(".plus");
+const buttonMinus= document.querySelectorAll(".minus");
 let edit = document.querySelectorAll(".edit");
 let reply = document.querySelectorAll(".reply");
 
@@ -25,7 +27,7 @@ for (let i = 0; i < button.length; i++) {
             <label for="coment" class="box--comment">
                 <span class="span"></span><input type="text" name="coment" id="coment" class="box--comment--input" placeholder="Add a comment...">
             </label>
-            <button class="send content insert" onclick="saveComent()" type="submit">REPLY</button>
+            <button class="send update insert" onclick="saveComent()" type="submit">REPLY</button>
         </form>
         `;
   
@@ -125,7 +127,7 @@ function saveComent () {
             } else {
                  text(caminho, i);
                  setUserName();
-                 refreshArray();
+                 //refreshArray();
               }
 
 
@@ -139,18 +141,13 @@ function saveComent () {
 //função que pega o comentário no localstorage e adiciona na div criada, através de um output
 function text (caminho, i) {
     console.log(caminho, i);
-    let reply = document.querySelectorAll(".userReply");
+    let userReply = document.querySelectorAll(".userReply");
 
-    for (let i = 0; i < reply.length; i++) {
-        
-        let arrayReply = i;
-        
-    }
-    reply[editArray].innerHTML = `
+    userReply[editArray].innerHTML = `
 
     <div class="rating">
         <img class="plus" src="images/icon-plus.svg" alt="icon plus">
-        <output type="number" id="rating">0</output>
+        <output type="number" class="rating--value" id="rating">0</output>
         <img class="minus" src="images/icon-minus.svg" alt="icon minus">
     </div>
     <div class="user--data">
@@ -194,7 +191,7 @@ function text (caminho, i) {
 
 function editar () {
     
-    refreshArray();
+    //refreshArray();
 
     for (let i = 0; i < edit.length; i++) {
         
@@ -214,7 +211,7 @@ function editar () {
                 <label for="coment" class="box--comment">
                     <input type="text" name="coment" id="coment" class="box--comment--input" placeholder="Add a comment...">
                 </label>
-                <button class="send content" onclick="update()" type="submit">UPDATE</button>
+                <button class="send update" onclick="update()" type="submit">UPDATE</button>
             </form>
             `;
         
@@ -229,7 +226,7 @@ function editar () {
 }    
 
 function update () {
-    let updateButton = document.querySelectorAll(".content");
+    let updateButton = document.querySelectorAll(".update");
     for (let i = 0; i < updateButton.length; i++) {
         updateButton[i].addEventListener('click', (e) => {
 
@@ -245,7 +242,7 @@ function update () {
             } else {
                  text(caminho, i);
                  setUserName();
-                 refreshArray();
+                 //refreshArray();
               }
 
 
@@ -265,7 +262,7 @@ function del ( ) {
     let deleteButton = document.querySelectorAll(".delete")
     for (let i = 0; i < deleteButton.length; i++) {
         let deleteButton = document.querySelectorAll(".delete");
-        console.log(i);
+        //console.log(i);
         deleteButton[i].addEventListener('click', () => {
         console.log(deleteButton[i]);
         element[i].remove();
@@ -275,3 +272,42 @@ function del ( ) {
     }
     
 };
+
+const ratingValue = document.querySelectorAll(".rating--value");
+
+//increment value
+for (let i = 0; i < buttonPlus.length; i++) {
+    
+    buttonPlus[i].addEventListener('click', () => {
+
+        if (ratingValue[i].inert == false) {
+
+            let value;
+            value = ratingValue[i].value;
+            value++;
+            ratingValue[i].innerHTML = value;
+            ratingValue[i].inert = true;   
+        } 
+
+    })
+    
+}
+
+//decrement value
+
+for (let i = 0; i < buttonMinus.length; i++) {
+    
+    buttonMinus[i].addEventListener('click', () => {
+
+        if (ratingValue[i].inert == false) {
+
+            let value;
+            value = ratingValue[i].value;
+            value--;
+            ratingValue[i].innerHTML = value;
+            ratingValue[i].inert = true;   
+        } 
+
+    })
+    
+}
