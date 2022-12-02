@@ -3,11 +3,11 @@ const buttonPlus = document.querySelectorAll(".plus");
 const buttonMinus = document.querySelectorAll(".minus");
 const ratingValue = document.querySelectorAll(".rating--value");
 let edit = document.querySelectorAll(".edit");
+let userEdit = document.querySelectorAll(".user--edit");
 let reply = document.querySelectorAll(".reply");
-
 let editArray = 0;
-//Crio uma div de reply, dentro dessa div, adiciono um botão de reply e o formulário
 
+//Crio uma div de reply, dentro dessa div, adiciono um botão de reply e o formulário
 let id = 1;
 let mention;
 
@@ -30,9 +30,7 @@ for (let i = 0; i < button.length; i++) {
 
         //puxei os parametros informados pelo evento e com ele descobri que consigo selecionar o box em que foi apertado o botão pela função path[1]
         //adicionei o comando para adicionar a nova div após o path[1]
-        console.log(e);
         let event = e;
-        console.log(event.path[1]);
         event.path[4].after(newDiv);
         mention = event.path[5].id;
         loop();
@@ -47,7 +45,7 @@ for (let i = 0; i < send.length; i++) {
     send[i].addEventListener('click', (e) => {
 
         let newDiv = document.createElement("div");
-        newDiv.className = "col-sm-12 mb-4 teste display";
+        newDiv.className = "col-sm-12 mb-4 teste display reply";
         newDiv.id = "user--coment";
         newDiv.innerHTML = `
     
@@ -67,7 +65,7 @@ for (let i = 0; i < send.length; i++) {
                 
                 <div class="icons--desktop--flex">
                     <button class="delete" onclick="del()"><img src="images/icon-delete.svg" alt="delete">Delete</button>
-                    <button class="edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
+                    <button class="edit user--edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
                 </div>
             </div>
             
@@ -78,13 +76,11 @@ for (let i = 0; i < send.length; i++) {
     </div>   
     `;
         document.querySelector("body > main > .sendBox").before(newDiv);
-        console.log(e);
         let event = e;
         mention = event.path[2].id;
-        console.log(mention);
         loop();
         setUserName();
-        createUserComment();
+        //createUserComment();
     });
 };
 
@@ -97,19 +93,17 @@ function createUserComment() {
 
             editArray = i;
             let event = e;
-            console.log(event);
             let caminho = event.path[2];
             let valueInput = document.getElementById("user--box--comment").value;
-            console.log(caminho);
             localStorage.setItem(mention, valueInput);
             let outputValue = document.getElementById("comment-insert");
-            console.log(outputValue);
             outputValue.innerHTML = localStorage.getItem(mention);
         })
 
     }
 };
 
+//após escrever o comentário na caixa, ao clicar o botão de reply, a função abaixo é executada
 function saveComent() {
     let saveButton = document.querySelectorAll(".insert");
     for (let i = 0; i < saveButton.length; i++) {
@@ -117,7 +111,6 @@ function saveComent() {
 
             editArray = i;
             let event = e;
-            console.log(event);
             let caminho = event.path[2];
             let valueInput = document.getElementById("coment").value;
             localStorage.setItem(mention, valueInput);
@@ -127,7 +120,6 @@ function saveComent() {
             } else {
                 text(caminho, i);
                 setUserName();
-                //refreshArray();
             }
         })
     }
@@ -135,7 +127,7 @@ function saveComent() {
 
 //função que pega o comentário no localstorage e adiciona na div criada, através de um output
 function text(caminho, i) {
-    console.log(caminho, i);
+
     let userReply = document.querySelectorAll(".userReply");
 
     userReply[editArray].innerHTML = `
@@ -150,7 +142,7 @@ function text(caminho, i) {
             <div class="user--info">
                 <img class="user--avatar" src="" alt="user avatar">
                 <h1 class="user--id"></h1>
-                <h2 class="time">1 month ago</h2>
+                <h2 class="time">seconds ago</h2>
             </div>
             
             <div class="icons--desktop--flex">
@@ -167,7 +159,6 @@ function text(caminho, i) {
 
     let outputValue = document.querySelectorAll(".insert");
     let mentionValue = document.querySelectorAll(".span");
-    console.log(outputValue);
 
     outputValue[editArray].innerHTML = localStorage.getItem(mention);
     mentionValue[editArray].innerHTML = "@" + mention + " ";
@@ -183,11 +174,8 @@ function editar() {
         edit[i].addEventListener('click', (e) => {
 
             let event = e;
-
-            console.log(event);
             let caminho = event.path[3];
             mention = event.path[5].id;
-            console.log(i);
             editArray = i;
             caminho.innerHTML = `
     
@@ -207,14 +195,14 @@ function editar() {
     }
 }
 
+//após clicar em editar e escrever o comentário editado, ao clicar em update, a função abaixo é executada
 function update() {
     let updateButton = document.querySelectorAll(".update");
     for (let i = 0; i < updateButton.length; i++) {
         updateButton[i].addEventListener('click', (e) => {
-
+            
 
             let event = e;
-            console.log(event);
             let caminho = event.path[3];
             let valueInput = document.getElementById("coment").value;
             localStorage.setItem(mention, valueInput);
@@ -224,27 +212,26 @@ function update() {
             } else {
                 text(caminho, i);
                 setUserName();
-                //refreshArray();
             }
         })
     }
 }
 
+//função para deletar o comentário
 function del() {
     let element = document.querySelectorAll(".reply");
     let deleteButton = document.querySelectorAll(".delete")
     for (let i = 0; i < deleteButton.length; i++) {
         let deleteButton = document.querySelectorAll(".delete");
-        //console.log(i);
+
         deleteButton[i].addEventListener('click', () => {
-            console.log(deleteButton[i]);
             element[i].remove();
 
         })
     }
 };
 
-//increment value
+//increment rating value
 for (let i = 0; i < buttonPlus.length; i++) {
 
     buttonPlus[i].addEventListener('click', () => {
@@ -260,7 +247,7 @@ for (let i = 0; i < buttonPlus.length; i++) {
     })
 }
 
-//decrement value
+//decrement rating value
 
 for (let i = 0; i < buttonMinus.length; i++) {
 

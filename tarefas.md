@@ -22,3 +22,5 @@ Tarefas projeto
 [X] limitar o contador
 [ ] limpar o código
 [ ] Ajustar media queries
+[ ] corrigir readme, inclusive trocando a imagem
+[ ] organizar as pastas dentro de assets
