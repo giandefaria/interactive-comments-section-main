@@ -110,7 +110,7 @@ body {
     margin-right: 4px;
 }
 
-.avatar--comment, .avatar--reply {
+.avatar--comment, .avatar--reply, .avatar-width {
     width: 40px;
 }
 

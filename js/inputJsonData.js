@@ -68,6 +68,7 @@ function refreshArray () {
         editar();
         update();
         del();
+        createUserComment();
         
 };
 

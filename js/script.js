@@ -1,13 +1,13 @@
 const button = document.querySelectorAll(".button");
 const buttonPlus = document.querySelectorAll(".plus");
 const buttonMinus= document.querySelectorAll(".minus");
+const ratingValue = document.querySelectorAll(".rating--value");
 let edit = document.querySelectorAll(".edit");
 let reply = document.querySelectorAll(".reply");
 
 let editArray = 0;
 //Crio uma div de reply, dentro dessa div, adiciono um botão de reply e o formulário
 
-let teste
 let id = 1;
 let mention;
 
@@ -42,73 +42,78 @@ for (let i = 0; i < button.length; i++) {
     });
 }
 
-function criarComentario () {
+let send = document.querySelectorAll(".comment--up");
+
+//cria o box do comentário principal
+    for (let i = 0; i < send.length; i++) {
+   
+    send[i].addEventListener('click', (e) => {
 
     let newDiv = document.createElement("div");
-    newDiv.className = "col-sm-12 mb-4 teste";
+    newDiv.className = "col-sm-12 mb-4 teste display";
     newDiv.id = "user--coment";
     newDiv.innerHTML = `
     
-    <div class="rating"></div>
-    <div class="user--data">
-        <div class="user">
-            <div class="user--info">
-                <img class="user--avatar" src="" alt="user avatar">
-                <h1 class="user--id">amyrobson</h1>
-                <h2 class="time">1 month ago</h2>
+    <div class="container--coment box paddingBox">
+        <div class="rating">
+            <img class="plus" src="images/icon-plus.svg" alt="icon plus">
+            <output type="number" class="rating--value" id="rating">0</output>
+            <img class="minus" src="images/icon-minus.svg" alt="icon minus">
+        </div>
+        <div class="user--data">
+            <div class="user">
+                <div class="user--info">
+                    <img class="user--avatar avatar-width" src="" alt="user avatar">
+                    <h1 class="user--id"></h1>
+                    <h2 class="time">seconds ago</h2>
+                </div>
+                
+                <div class="d-flex">
+                    <button class="delete" onclick="del()"><img src="images/icon-delete.svg" alt="delete">Delete</button>
+                    <button class="edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
+                </div>
             </div>
             
-            <div class="d-flex">
-                <button class="delete" onclick="del()"><img src="images/icon-delete.svg" alt="delete">Delete</button>
-                <button class="edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
+            <div class="message">
+                <output id="comment-insert"></output>
             </div>
-        </div>
-        
-        <div class="message">
-            <output id="finalcoment insert"></output>
-        </div>
-    </div>    
+        </div> 
+    </div>   
     `;
     document.querySelector("body > main > .sendBox").before(newDiv);
+    console.log(e);
+    let event = e;
+    mention = event.path[2].id;
+    console.log(mention);
     loop();
+    setUserName();
+    createUserComment();
+});  
+};  
+
+
+//cria o comentário do usuário principal
+function createUserComment () {
+
+    let saveButton = document.querySelectorAll(".send--juliu");
+    for (let i = 0; i < saveButton.length; i++) {
+        saveButton[i].addEventListener('click', (e) => {
+
+            editArray = i;
+            let event = e;
+            console.log(event);
+            let caminho = event.path[2];
+            let valueInput = document.getElementById("user--box--comment").value;
+            console.log(caminho);
+            localStorage.setItem(mention, valueInput);
+            let outputValue = document.getElementById("comment-insert");
+            console.log(outputValue);
+            outputValue.innerHTML = localStorage.getItem(mention);
+        })
+
+    }
 };
 
-/*let content;
-let caminhoEditar;
-function localizar () {
-    content = document.querySelectorAll(".content")
-    console.log("ok")
-
-    for (let i = 0; i < content.length; i++) {
-        
-        content[i].addEventListener('click', (e) => {
-            let evento = e;
-            console.log(evento);
-
-            caminhoEditar = evento.path[2];
-        })
-        
-    }
-};*/
-
-//setInterval(localizar, 1000);
-
-
-//função que salva o comentário no localstorage e cria um output com o comentário escrito 
-/*function saveComent () {
-
-    let valueInput = document.getElementById("coment").value;
-    localStorage.setItem(mention, valueInput);
-
-    if (valueInput == "") {
-        alert("Insert a message")
-    } else {
-         text(editArray);
-         setUserName();
-         refreshArray();
-      }
-
-}*/
 
 function saveComent () {
     let saveButton = document.querySelectorAll(".insert");
@@ -129,11 +134,8 @@ function saveComent () {
                  setUserName();
                  //refreshArray();
               }
-
-
         })
-
-    
+   
     }
 
 }
@@ -154,7 +156,7 @@ function text (caminho, i) {
         <div class="user">
             <div class="user--info">
                 <img class="user--avatar" src="" alt="user avatar">
-                <h1 class="user--id">amyrobson</h1>
+                <h1 class="user--id"></h1>
                 <h2 class="time">1 month ago</h2>
             </div>
             
@@ -186,13 +188,8 @@ function text (caminho, i) {
 
 
 //comando de edição, abre a caixa do input e adiciona o valor no localStorage 
-
-
-
 function editar () {
     
-    //refreshArray();
-
     for (let i = 0; i < edit.length; i++) {
         
         edit[i].addEventListener('click', (e) => {
@@ -218,10 +215,7 @@ function editar () {
             let valueInput = document.getElementById("coment");
             valueInput.value = localStorage.getItem(mention);
             loop();
-
-
         });
-        
     }
 }    
 
@@ -273,7 +267,6 @@ function del ( ) {
     
 };
 
-const ratingValue = document.querySelectorAll(".rating--value");
 
 //increment value
 for (let i = 0; i < buttonPlus.length; i++) {

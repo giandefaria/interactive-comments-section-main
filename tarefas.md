@@ -17,7 +17,7 @@ Tarefas projeto
 [X] adicionar dia do comentário variável
 [X] adicionar contador de curtidas 
 [X] ajustar visual contador de curtidas
-[ ] adicionar opção de comentário
+[X] adicionar um novo comentário pelo próprio usuário
 [X] adicionar funcionalidade no contador de curtidas
 [X] limitar o contador
 [ ] limpar o código
