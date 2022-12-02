@@ -55,7 +55,7 @@ let send = document.querySelectorAll(".comment--up");
     newDiv.innerHTML = `
     
     <div class="container--coment box paddingBox">
-        <div class="rating">
+        <div class="rating--desktop">
             <img class="plus" src="images/icon-plus.svg" alt="icon plus">
             <output type="number" class="rating--value" id="rating">0</output>
             <img class="minus" src="images/icon-minus.svg" alt="icon minus">
@@ -68,7 +68,7 @@ let send = document.querySelectorAll(".comment--up");
                     <h2 class="time">seconds ago</h2>
                 </div>
                 
-                <div class="d-flex">
+                <div class="icons--desktop--flex">
                     <button class="delete" onclick="del()"><img src="images/icon-delete.svg" alt="delete">Delete</button>
                     <button class="edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
                 </div>
@@ -76,6 +76,17 @@ let send = document.querySelectorAll(".comment--up");
             
             <div class="message">
                 <output id="comment-insert"></output>
+            </div>
+            <div class="rating rating--mobile">
+                <div class="icons--mobile--rating">
+                    <img class="plus" src="images/icon-plus.svg" alt="icon plus">
+                    <output type="number" class="rating--value" id="rating">12</output>
+                    <img class="minus" src="images/icon-minus.svg" alt="icon minus">
+                </div>    
+                <div class="icons--mobile--flex">
+                    <button class="delete" onclick="del()"><img src="images/icon-delete.svg" alt="delete">Delete</button>
+                    <button class="edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
+                </div>
             </div>
         </div> 
     </div>   
@@ -147,7 +158,7 @@ function text (caminho, i) {
 
     userReply[editArray].innerHTML = `
 
-    <div class="rating">
+    <div class="rating--desktop">
         <img class="plus" src="images/icon-plus.svg" alt="icon plus">
         <output type="number" class="rating--value" id="rating">0</output>
         <img class="minus" src="images/icon-minus.svg" alt="icon minus">
@@ -160,7 +171,7 @@ function text (caminho, i) {
                 <h2 class="time">1 month ago</h2>
             </div>
             
-            <div class="d-flex">
+            <div class="icons--desktop--flex">
                 <button class="delete" onclick="del()"><img src="images/icon-delete.svg" alt="delete">Delete</button>
                 <button class="edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
             </div>
@@ -168,6 +179,17 @@ function text (caminho, i) {
         
         <div class="message">
             <span class="span"></span><output class="finalcoment insert"></output>
+        </div>
+    </div>
+    <div class="rating rating--mobile">
+        <div class="icons--mobile--rating">
+            <img class="plus" src="images/icon-plus.svg" alt="icon plus">
+            <output type="number" class="rating--value" id="rating">12</output>
+            <img class="minus" src="images/icon-minus.svg" alt="icon minus">
+        </div>    
+        <div class="icons--mobile--flex">
+            <button class="delete" onclick="del()"><img src="images/icon-delete.svg" alt="delete">Delete</button>
+            <button class="edit" onclick="editar()"><img src="images/icon-edit.svg" alt="edit"> Edit</button>
         </div>
     </div>    
     

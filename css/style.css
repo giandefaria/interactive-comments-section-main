@@ -2,7 +2,7 @@ html {
     margin: 0 auto;
     background: hsl(228, 33%, 97%);
     font-family: 'Rubik', sans-serif;
-    width: 800px;
+    max-width: 800px;
 
 }
 body {
@@ -110,6 +110,10 @@ body {
     margin-right: 4px;
 }
 
+.icons--desktop--flex {
+    display: flex;
+}
+
 .avatar--comment, .avatar--reply, .avatar-width {
     width: 40px;
 }
@@ -167,5 +171,65 @@ body {
     color: white;
     border-style: none;
     background: hsl(238, 40%, 52%);
+
+}
+
+
+@media screen and (min-width: 561px) {
+    .icons--mobile, .rating--mobile {
+        display: none;
+    }
+    .icons--mobile--rating{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 560px) {
+
+    .icons--desktop--flex {
+        display: none;
+    }
+
+    .icons--desktop, .rating--desktop {
+        display: none;
+    }
+
+    .rating--mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        background: white;
+        padding: unset;
+    }
+    .icons--mobile--rating {
+        display: flex;
+        background: hsl(228, 33%, 97%);
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+        padding: 10px 26px;
+        border-radius: 10px;
+    }
+
+    .icons--mobile--flex {
+        display: flex;
+    }
+
+
+    .box {
+        flex-direction: column;
+
+    }
+
+    .paddingBox {
+        padding: 15px 21px 0px;
+    }
+
+    .button { 
+
+
+    }
+
 
 }
