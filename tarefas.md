@@ -20,7 +20,7 @@ Tarefas projeto
 [X] adicionar um novo comentário pelo próprio usuário
 [X] adicionar funcionalidade no contador de curtidas
 [X] limitar o contador
-[ ] limpar o código
-[ ] Ajustar media queries
-[ ] corrigir readme, inclusive trocando a imagem
-[ ] organizar as pastas dentro de assets
+[X] Ajustar media queries
+[X] corrigir readme, inclusive trocando a imagem
+[X] organizar as pastas dentro de assets
+[ ] adicionar mensagem de alerta antes de excluir

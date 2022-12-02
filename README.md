@@ -11,7 +11,14 @@
 
 Challenge from frontendmentor.io. https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9
 
-**O objetivo é criar uma página ecommerce, alterando a imagem principal ao clicar nas miniaturas, adicionando a quantidade do produto ao carrinho, e abrir o carrinho de compras com a informação dos produtos adicionados.**
+**O objetivo é criar um projeto CRUD, baseado em uma seção de comentários interativa, com a possibilidade de responder, criar , editar e excluir comentários. O principal foco desse projeto é treinar as habilidades em JavaScript. Para o seu desenvolvimento, foi utilizado um objeto em JSON, onde constam a url da imagem dos avatares, os comentários, nome de usuários, dados esses que foram selecionados e imbutidos no HTML da página por meio do arquivo inputJsonData.js. Foi também utilizado o framework Bootstrap para o design do box dos comentários e réplicas.**
+
+# Teconologias utilizadas
+ * HTML
+ * CSS
+ * JS
+ * Bootstrap
+ * JSON
 
 **Para executar esse projeto basta executar o arquivo index.html.**
 
@@ -25,3 +32,10 @@ Challenge from frontendmentor.io. https://www.frontendmentor.io/challenges/inter
 
  # Arquivo script.js
   * Contém todas as funções JS responsáveis pela interação do usuário com a página. 
+
+  
+ # Arquivo inputJsonData.js
+  * arquivo responsável por adicionas os dados contidos em dataJson.js no HTML da página
+  
+ # Arquivo dataJson.js
+  * nesse arquivo se encontra o objeto em JSON. 
