@@ -58,7 +58,7 @@ function refreshArray () {
         reply = document.querySelectorAll(".reply");
         userReply = document.querySelectorAll(".userReply");
         saveButton = document.querySelectorAll(".insert");
-        saveComent();
+        //saveComent();
         editar();
         update();
         del();
