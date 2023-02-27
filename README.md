@@ -17,11 +17,9 @@
 
 
 - [Proposta do projeto](#id01)
-- [Desafios](#id02)
 - [Arquivos do projeto](#id03)
 - [Visual do projeto](#id04)
 - [Feito com](#id05)
-- [Procedimento de instalação](#id06)
 - [Autor](#id07)
 
 # Proposta do projeto <a name="id01"></a>
@@ -32,18 +30,14 @@ O layout do projeto é baseado nesse challenge do site Frontend Mentor: https://
 O objetivo é criar um projeto CRUD, baseado em uma seção de comentários interativa, com a possibilidade de responder, criar , editar e excluir comentários. O principal foco desse projeto é treinar as habilidades em JavaScript. Para o seu desenvolvimento, foi utilizado um objeto em JSON, onde constam a url da imagem dos avatares, os comentários, nome de usuários, dados esses que foram selecionados e imbutidos no HTML da página por meio do arquivo inputJsonData.js. Foi também utilizado Bootstrap para o design do box dos comentários e réplicas.o wikipedia para ter mais informações sobre o país.
 
 
-# Desafios <a name="id02"> </a>
-
-Desafio foi criar uma página variável onde se alterasse apenas as informações do país que foi selecionado. Para isso, foi utilizado o react-router-dom e o hook useParams(), de modo que esse valor variável do link fosse capturado e feito uma requisição para a API retornar as informações daquele país, renderizando a página com os elementos HTML e mostrando do mapa a localização do país pela latitude e longitude informada pela API.
-
 # Arquivos do projeto <a name="id03"> </a>
 
-Os principais arquivos do projeto são: 
-* diretório pages => localização do arquivo da página inicial (main) e de informação dos países (country-info)
-* diretório components => estão localizadas metódos que serão utilizados no projeto: change-light-mode (para mudar tema da página);  crete-html-element-with-list (recebe a lista de países e monta no html); input-country-list (funções que montam a lista de países de acordo com o tipo de busca);
-* diretório assets => contém as imagens utilizadas no projeto
-* diretório interfaces => contem a interface utilizada no retorno da API, para habilitar o autocomplete e evitar que o desenvolvedor coloque informações que não são retornadas pela API.
-* diretório styles => contém os estilos utilizados globalmente no projeto
+Os arquivos do projeto são: 
+* index.html => Arquivo para iniciar o projeto. Aqui consta a marcação dos elementos no html
+* style.css => Adicionei o visual da página no desktop e no mobile
+* script.js => Contém todas as funções JS responsáveis pela interação do usuário com a página
+* inputJsonData.js => arquivo responsável por adicionas os dados contidos em dataJson.js no HTML da página
+* dataJson.js => nesse arquivo se encontra o objeto em JSON
 
 # Visual do projeto <a name="id04"></a>
 
@@ -72,33 +66,13 @@ src="./assets/design/desktop-preview.jpg"
 
 <br />
 
-- [React](https://reactjs.org/)
-- [Typescript](https://www.typescriptlang.org/)
-- [RestCountriesAPI](https://restcountries.com/)
-- [Leaflet](https://leafletjs.com/examples/quick-start/)
+- [JavaScript](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+- [CSS]
+- [Bootstrap](https://getbootstrap.com/)
 
 
 <br />
 
-# 📝 Procedimentos de instalação <a name="id06"></a>
-
-<br />
-
-Clone este repositório usando o comando:
-
-```bash
-git clone https://github.com/giandefaria/rest-countries-api-with-color-theme-switcher-master.git
-```
-
-Na pasta do projeto instale as dependências com uso do npm ou yarn
-
-```bash
-npm install
-ou
-yarn install
-```
-
-<br />
 
 # Autor <a name="id07"></a>
 
@@ -107,46 +81,3 @@ yarn install
 - Frontend Mentor - [@giandefaria](https://www.frontendmentor.io/profile/giandefaria)
 - Linkedim - [Gian de Faria](www.linkedin.com/in/gianfaria)
 - GitHub - [giandefaria](https://github.com/giandefaria)
-
-
-# Frontend Mentor - Interactive comments section
-
-![Design preview for the Interactive comments section coding challenge](./assets/design/desktop-preview.jpg)
-
-* Mobile preview
-
-![Design preview in mobile](./assets/design/mobile-design.jpg)
-
-
-## Welcome! 👋
-
-Challenge from frontendmentor.io. https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9
-
-**O objetivo é criar um projeto CRUD, baseado em uma seção de comentários interativa, com a possibilidade de responder, criar , editar e excluir comentários. O principal foco desse projeto é treinar as habilidades em JavaScript. Para o seu desenvolvimento, foi utilizado um objeto em JSON, onde constam a url da imagem dos avatares, os comentários, nome de usuários, dados esses que foram selecionados e imbutidos no HTML da página por meio do arquivo inputJsonData.js. Foi também utilizado o framework Bootstrap para o design do box dos comentários e réplicas.**
-
-# Teconologias utilizadas
- * HTML
- * CSS
- * JS
- * Bootstrap
- * JSON
-
-**Para executar esse projeto basta executar o arquivo index.html.**
-
-**No arquivo 'tarefas.md' consta o passo a passo realizado para o desenvolvimento do projeto.**
-
- # Arquivo index.html
- * Arquivo para iniciar o projeto. Aqui consta a marcação dos elementos no html.
-
- # Arquivo style.css
- * Adicionei o visual da página no desktop e no mobile 
-
- # Arquivo script.js
-  * Contém todas as funções JS responsáveis pela interação do usuário com a página. 
-
-  
- # Arquivo inputJsonData.js
-  * arquivo responsável por adicionas os dados contidos em dataJson.js no HTML da página
-  
- # Arquivo dataJson.js
-  * nesse arquivo se encontra o objeto em JSON. 
