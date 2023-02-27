@@ -26,9 +26,10 @@
 
 # Proposta do projeto <a name="id01"></a>
 
-O layout do projeto é baseado nesse challenge do site Frontend Mentor: https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
+O layout do projeto é baseado nesse challenge do site Frontend Mentor: https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9
 
-A proposta desse projeto consiste em montar uma página que possui uma lista de todos os países, contendo as informações de cada país, além de ser possível realizar a busca de um país por nome ou por região. Foi incrementado no projeto o modo noturno, um mapa que mostra a localização do país no mapa mundi, além de um ícone do wikipedia para ter mais informações sobre o país.
+
+O objetivo é criar um projeto CRUD, baseado em uma seção de comentários interativa, com a possibilidade de responder, criar , editar e excluir comentários. O principal foco desse projeto é treinar as habilidades em JavaScript. Para o seu desenvolvimento, foi utilizado um objeto em JSON, onde constam a url da imagem dos avatares, os comentários, nome de usuários, dados esses que foram selecionados e imbutidos no HTML da página por meio do arquivo inputJsonData.js. Foi também utilizado Bootstrap para o design do box dos comentários e réplicas.o wikipedia para ter mais informações sobre o país.
 
 
 # Desafios <a name="id02"> </a>
