@@ -1,15 +1,15 @@
 <p align="center">
   <image
-  src="https://img.shields.io/github/languages/count/giandefaria/rest-countries-api-with-color-theme-switcher-master"
+  src="https://img.shields.io/github/languages/count/giandefaria/interactive-comments-section-main"
   />
   <image
-  src="https://img.shields.io/github/languages/top/giandefaria/rest-countries-api-with-color-theme-switcher-master"
+  src="https://img.shields.io/github/languages/top/giandefaria/interactive-comments-section-main"
   />
   <image
-  src="https://img.shields.io/github/last-commit/giandefaria/rest-countries-api-with-color-theme-switcher-master"
+  src="https://img.shields.io/github/last-commit/giandefaria/interactive-comments-section-main"
   />
   <image
-  src="https://img.shields.io/github/watchers/giandefaria/rest-countries-api-with-color-theme-switcher-master"
+  src="https://img.shields.io/github/watchers/giandefaria/interactive-comments-section-main"
   />
 </p>
 
